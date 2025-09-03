@@ -7,13 +7,14 @@ services.AddTransient<Unit>();
 
 ServiceProvider provider = services.BuildServiceProvider();
 
-IRenderer renderer = provider.GetRequiredService<IRenderer>();
-renderer.Render();
+//IRenderer renderer = provider.GetRequiredService<IRenderer>();
+//renderer.Render();
 
+Unit u1 = provider.GetRequiredService<Unit>();
+u1.Show();
 
-
-
-
+Unit u2 = new Unit(new Renderer3d(new FileLoader()));
+u2.Show();
 
 interface IRenderer
 {
